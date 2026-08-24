@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — RV2 Energy</title>
+<meta name="description" content="Live field roles at RV2 Energy across our Sureserve, SCM and SMS contracts. Apply directly online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="/" class="brand"><img src="/images/logo-256.png" alt="RV2 Energy logo"><span class="brand-word">RV2 Energy</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/careers.html" class="active">Careers</a></li>
+      <li><a href="/upskill.html">Upskill</a></li>
+      <li><a href="/businesses.html">Our Businesses</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="/careers.html" class="btn btn-primary">View Live Roles</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Careers</span>
+    <h1 style="font-size:clamp(2rem,4.5vw,3rem);">Live roles across our field teams</h1>
+    <p style="max-width:56ch; font-size:1.05rem;">Every role below is currently open. Apply directly — your application goes straight to our recruitment team, no third-party job board in between.</p>
+    <div id="gauge" class="gauge-badge"><span class="gauge-dot"></span> Loading live roles…</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div id="roleList" class="role-list">
+      <!-- roles injected here -->
+    </div>
+  </div>
+</section>
+
+<!-- Application modal -->
+<div class="modal-overlay" id="applyOverlay">
+  <div class="modal">
+    <button class="modal-close" id="closeModal" aria-label="Close">✕</button>
+    <span class="eyebrow" id="modalRoleContract">CONTRACT</span>
+    <h2 id="modalRoleTitle" style="font-size:1.6rem;">Role title</h2>
+    <div id="formMsg" class="form-msg"></div>
+    <form id="applyForm">
+      <input type="hidden" name="roleId" id="roleId">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="field">
+        <label for="message">A bit about your experience</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tickets/accreditations, relevant experience, availability..."></textarea>
+      </div>
+      <div class="field">
+        <label for="cv">CV (PDF or Word, optional)</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+        <div class="field-hint">Max 5MB. If you'd rather not attach one now, just tell us how to find you.</div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Submit application</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 RV2 Energy. All rights reserved.</span>
+      <span>Wakefield, England</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/nav.js"></script>
+<script src="/js/careers.js"></script>
+</body>
+</html>

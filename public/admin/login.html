@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — RV2 Energy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  body { background: var(--ink); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .login-box {
+    background: var(--white); border-radius: var(--radius); padding: 40px;
+    max-width: 380px; width: 100%; margin: 24px;
+  }
+</style>
+</head>
+<body>
+  <div class="login-box">
+    <span class="eyebrow">Admin</span>
+    <h1 style="font-size:1.8rem;">Roles dashboard</h1>
+    <div id="formMsg" class="form-msg"></div>
+    <form id="loginForm">
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autofocus>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Sign in</button>
+    </form>
+    <p style="margin-top:20px;"><a href="/" style="font-size:0.85rem; color:var(--steel);">← Back to site</a></p>
+  </div>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const formMsg = document.getElementById('formMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Signing in...';
+    formMsg.className = 'form-msg';
+    try {
+      const res = await fetch('/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: document.getElementById('password').value }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Login failed');
+      window.location.href = '/admin/dashboard.html';
+    } catch (err) {
+      formMsg.textContent = err.message;
+      formMsg.className = 'form-msg error show';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Sign in';
+    }
+  });
+</script>
+</body>
+</html>

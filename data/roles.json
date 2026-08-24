@@ -1,0 +1,38 @@
+[
+  {
+    "id": "r-1001",
+    "title": "Smart Meter Installer",
+    "contract": "SMS",
+    "location": "Wakefield & West Yorkshire",
+    "employmentType": "PAYE",
+    "salary": "£32,000 - £38,000 + van + bonus",
+    "summary": "Domestic smart meter installs across a fixed West Yorkshire patch. Full training and Gas Safe sponsorship available.",
+    "description": "We're looking for a Smart Meter Installer to join our SMS contract team covering Wakefield and the surrounding West Yorkshire area. You'll carry out domestic gas and electric smart meter exchanges to a high safety and quality standard, working from a fixed daily patch with a company van provided.\n\nWe'll support Gas Safe registration and MOCOPA accreditation for the right candidate, and there's a clear route into multi-skilling and team leader roles as you progress.",
+    "postedDate": "2026-08-01",
+    "active": true
+  },
+  {
+    "id": "r-1002",
+    "title": "Multi-Skilled Engineer",
+    "contract": "Sureserve",
+    "location": "South Yorkshire",
+    "employmentType": "CIS Subcontractor",
+    "salary": "Day rate, negotiable on experience",
+    "summary": "Gas Safe registered engineer for combined metering, service and repair work across our Sureserve contract.",
+    "description": "Our Sureserve contract is expanding and we need an experienced, Gas Safe registered Multi-Skilled Engineer to cover meter exchanges, service and minor repair work across South Yorkshire.\n\nWork is steady and locally based, with fortnightly payment and bonus allocation for productivity and quality. Own tools and van essential; we handle the admin so you can focus on the job.",
+    "postedDate": "2026-07-20",
+    "active": true
+  },
+  {
+    "id": "r-1003",
+    "title": "Field Supervisor",
+    "contract": "SCM",
+    "location": "Yorkshire & Humber (regional travel)",
+    "employmentType": "PAYE",
+    "salary": "£42,000 - £48,000 + vehicle",
+    "summary": "Lead a team of field operatives across our SCM contract, owning safety, quality and productivity for your patch.",
+    "description": "We're recruiting a Field Supervisor to lead a team of engineers and installers across our SCM contract. You'll own day-to-day safety compliance, quality audits and productivity for your patch, working closely with our operations and compliance teams.\n\nThis is a great next step for an experienced engineer ready to move into people management, or a supervisor looking for a business that invests properly in its field teams.",
+    "postedDate": "2026-08-10",
+    "active": true
+  }
+]

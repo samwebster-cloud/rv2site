@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roles Dashboard — RV2 Energy Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .admin-bar {
+    background: var(--ink); color: var(--white); padding: 18px 0;
+  }
+  .admin-bar .container { display: flex; justify-content: space-between; align-items: center; }
+  table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  th, td { text-align: left; padding: 14px; border-bottom: 1px solid #e4e0d6; font-size: 0.92rem; vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); }
+  .row-actions { display: flex; gap: 10px; }
+  .row-actions button { font-size: 0.82rem; padding: 8px 14px; }
+  .status-pill { font-family: var(--font-mono); font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; }
+  .status-pill.active { background: #e7f4ec; color: var(--meter-green); }
+  .status-pill.inactive { background: #eee; color: var(--steel); }
+</style>
+</head>
+<body>
+
+<div class="admin-bar">
+  <div class="container">
+    <div class="brand" style="color:var(--white);"><img src="/images/logo-256.png" alt="RV2 Energy logo"><span class="brand-word">Admin</span></div>
+    <div style="display:flex; gap:16px; align-items:center;">
+      <a href="/careers.html" class="btn btn-outline-light" target="_blank">View careers page ↗</a>
+      <button class="btn btn-outline-light" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:48px;">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="eyebrow">Roles dashboard</span>
+        <h1 style="font-size:2rem;">Manage live roles</h1>
+      </div>
+      <button class="btn btn-primary" id="newRoleBtn">+ Add new role</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Contract</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Posted</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rolesTableBody">
+        <tr><td colspan="6">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Role editor modal -->
+<div class="modal-overlay" id="editorOverlay">
+  <div class="modal" style="max-width:640px;">
+    <button class="modal-close" id="closeEditor" aria-label="Close">✕</button>
+    <h2 id="editorTitle" style="font-size:1.5rem;">Add a role</h2>
+    <div id="editorMsg" class="form-msg"></div>
+    <form id="roleForm">
+      <input type="hidden" id="roleId" name="id">
+      <div class="field">
+        <label for="title">Job title</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="two-col" style="gap:16px;">
+        <div class="field">
+          <label for="contract">Contract</label>
+          <select id="contract" name="contract" required>
+            <option value="Sureserve">Sureserve</option>
+            <option value="SCM">SCM</option>
+            <option value="SMS">SMS</option>
+            <option value="RV2 Power">RV2 Power</option>
+            <option value="Civils">Civils</option>
+            <option value="ICP">ICP</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="employmentType">Employment type</label>
+          <select id="employmentType" name="employmentType" required>
+            <option value="PAYE">PAYE</option>
+            <option value="CIS Subcontractor">CIS Subcontractor</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required placeholder="e.g. Wakefield & West Yorkshire">
+      </div>
+      <div class="field">
+        <label for="salary">Salary / rate (optional)</label>
+        <input type="text" id="salary" name="salary" placeholder="e.g. £32,000 - £38,000 + van">
+      </div>
+      <div class="field">
+        <label for="summary">Short summary (shown on the roles list)</label>
+        <textarea id="summary" name="summary" rows="2" required></textarea>
+      </div>
+      <div class="field">
+        <label for="description">Full description (optional, for future use)</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+      <div class="field">
+        <label><input type="checkbox" id="active" name="active" style="width:auto; margin-right:8px;" checked> Live (visible on careers page)</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="saveBtn">Save role</button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "rv2-energy-site",
+  "version": "1.0.0",
+  "description": "RV2 Energy marketing site with functional careers board, admin panel, and email applications",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "hash-password": "node scripts/hash-password.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^6.9.13"
+  }
+}
